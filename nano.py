@@ -1,11 +1,8 @@
 import os,sys
 
 user = str(sys.argv[1])
-if len(sys.argv) == 2:
-    path = str(sys.argv[2])
-else:
-    print("Usage: nano <filename>")
-    quit()
+path = str(sys.argv[2])
+
 
 goal = 'home\\'+user+"\\"+path
 # Because of the above lines, Nano is purposefully limited to the user's directory
