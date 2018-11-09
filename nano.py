@@ -7,7 +7,7 @@ else:
     print("Usage: nano <filename>")
     quit()
 
-goal = 'home/'+user+"/"+path
+goal = 'home\\'+user+"\\"+path
 # Because of the above lines, Nano is purposefully limited to the user's directory
 
 print("Editing file. Enter a blank line to exit and save.")

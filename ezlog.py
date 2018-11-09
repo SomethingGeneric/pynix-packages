@@ -11,9 +11,9 @@ if __name__ == "__main__":
 
 class ezlog:
     def __init__(self,programname):
-        if not verify('../log/ext/'+programname):
-            os.makedirs('../log/ext/'+programname)
-        self.path = '../log/ext/'+programname
+        if not verify('..\\log\\ext\\'+programname):
+            os.makedirs('..\\log\\ext\\'+programname)
+        self.path = '..\\log\\ext\\'+programname
     def log(text):
         f = open(self.path,'a+')
         f.write("\n"+text)

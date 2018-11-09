@@ -1,3 +1,3 @@
-f = open('bin/v.txt')
+f = open('bin\\v.txt')
 print(f.read())
 f.close()

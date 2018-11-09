@@ -10,7 +10,7 @@ else:
     print("Usage: less <filename>")
     quit()
 
-goal = 'home/'+user+"/"+path
+goal = 'home\\'+user+"\\"+path
 # Because of the above lines, less is purposefully limited to the user's directory
 
 f = open(goal)
