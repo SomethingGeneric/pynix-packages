@@ -4,7 +4,10 @@ def clear():
     print("\n"*200)
 
 user = str(sys.argv[1])
-path = str(sys.argv[2])
+if len(sys.argv) == 2:
+    path = str(sys.argv[2])
+else:
+    print("Usage: less <filename>")
 goal = 'home/'+user+"/"+path
 # Because of the above lines, less is purposefully limited to the user's directory
 
