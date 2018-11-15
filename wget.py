@@ -10,6 +10,6 @@ x = url.split("/")
 saveto = str(x[-1])
 
 obj = requests.get(url)
-f = open(saveto,'w')
+f = open("home/"+saveto,'w')
 f.write(obj.text)
 f.close()
