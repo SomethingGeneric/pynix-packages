@@ -8,24 +8,24 @@ else:
     opt = ""
 
 base = "https://raw.githubusercontent.com/SomethingGeneric/pn-apt-packages/master/"
-pfn = "bin/" + package + ".py"
+pfn = package + ".py"
 
 if command == "install":
     r = requests.get(base + pfn)
     if not os.path.exists(pfn):
-        f = open(pfn,'w')
+        f = open('bin/'+pfn,'w')
         f.write(r.text)
         f.close()
         print("Installed " + package)
     else:
         if opt == "f" or opt == "u":
-            f = open(pfn,'w')
+            f = open('bin/'+pfn,'w')
             f.write(r.text)
             f.close()
             print("Reinstalled/updated " + package)
         else:
             print("Package already installed. Use option 'f' to reinstall/update")
 elif command == "remove":
-    if os.path.exists(pfn):
-        os.remove(pfn)
+    if os.path.exists('bin/'+pfn):
+        os.remove('bin/'+pfn)
         print("Removed " + package)
