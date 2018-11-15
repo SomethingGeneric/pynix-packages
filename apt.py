@@ -2,7 +2,7 @@ import os,shutil,sys,requests
 
 command = str(sys.argv[1])
 package = str(sys.argv[2])
-if len(sys.argv) == 3:
+if len(sys.argv) == 4:
     opt = str(sys.argv[3])
 else:
     opt = ""
