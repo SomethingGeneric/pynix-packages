@@ -4,8 +4,8 @@ def clear():
     print("\n"*200)
 
 
-if len(sys.argv) == 1:
-    path = str(sys.argv[1])
+if len(sys.argv) == 2:
+    path = str(sys.argv[2])
 else:
     print("Usage: less <filename>")
     quit()
