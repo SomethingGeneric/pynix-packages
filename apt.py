@@ -7,7 +7,7 @@ if len(sys.argv) == 3:
 else:
     opt = ""
 
-base = "https://raw.githubusercontent.com/SomethingGeneric/pynix-packages/master/"
+base = "https://raw.githubusercontent.com/SomethingGeneric/pn-apt-packages/master/"
 pfn = package + ".py"
 
 if command == "install":
