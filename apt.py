@@ -8,7 +8,7 @@ else:
     opt = ""
 
 base = "https://raw.githubusercontent.com/SomethingGeneric/pn-apt-packages/master/"
-pfn = package + ".py"
+pfn = "bin/" + package + ".py"
 
 if command == "install":
     r = requests.get(base + pfn)
