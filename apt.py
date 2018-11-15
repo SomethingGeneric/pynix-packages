@@ -25,13 +25,7 @@ if command == "install":
         f.close()
         print("Installed " + package)
     else:
-        if opt == "f" or opt == "u":
-            f = open('bin/'+pfn,'w')
-            f.write(r.text)
-            f.close()
-            print("Reinstalled/updated " + package)
-        else:
-            print("Package already installed. Use option 'f' to reinstall/update")
+        print("Package installed. If you're trying to update, use 'apt remove' first")
 elif command == "remove":
     if os.path.exists('bin/'+pfn):
         os.remove('bin/'+pfn)
