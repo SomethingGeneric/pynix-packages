@@ -12,6 +12,13 @@ pfn = package + ".py"
 
 if command == "install":
     r = requests.get(base + pfn)
+    req = requests.get(base + package + ".txt")
+    if os.path.exists(package+'.txt'):
+        os.remove(package+'.txt')
+    if not "404: Not Found" in req.text:
+        f = open(package + ".txt")
+        os.system('python3 -m pip install -r ' + package + ".txt")
+        os.remove(package+".txt")
     if not os.path.exists(pfn):
         f = open('bin/'+pfn,'w')
         f.write(r.text)
