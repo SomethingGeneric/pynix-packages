@@ -2,7 +2,7 @@ import os,sys
 
 
 if len(sys.argv) == 2:
-    path = str(sys.argv[2])
+    path = str(sys.argv[1])
 else:
     print("Usage: nano <filename>")
     quit()
