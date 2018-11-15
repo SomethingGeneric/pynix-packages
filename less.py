@@ -3,15 +3,15 @@ import sys,os
 def clear():
     print("\n"*200)
 
-user = str(sys.argv[1])
-if len(sys.argv) == 2:
-    path = str(sys.argv[2])
+
+if len(sys.argv) == 1:
+    path = str(sys.argv[1])
 else:
     print("Usage: less <filename>")
     quit()
 
-goal = 'home/'+user+"/"+path
-# Because of the above lines, less is purposefully limited to the user's directory
+goal = 'home/'+path
+
 
 f = open(goal)
 text = f.read()
