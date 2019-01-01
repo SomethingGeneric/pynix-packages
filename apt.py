@@ -3,6 +3,12 @@ import os,shutil,sys,requests
 from oslib import hostmgr
 h = hostmgr()
 
+def verify(path):
+    if os.path.exists(path):
+        return 1
+    else:
+        return 0
+
 command = str(sys.argv[1])
 package = str(sys.argv[2])
 if len(sys.argv) == 4:
@@ -33,3 +39,14 @@ elif command == "remove":
     if os.path.exists('bin'+h.get()+pfn):
         os.remove('bin'+h.get()+pfn)
         print("Removed " + package)
+elif command == "sideload":
+    sourcepath = ".."+h.get()+package+".src"
+    if verify(sourcepath):
+        f = open(sourcepath)
+        source = f.read()
+        f.close()
+        os.remove(sourcepath)
+        f = open(package+".py")
+        f.write(source)
+        f.close()
+        print("Done!")
