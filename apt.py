@@ -39,16 +39,3 @@ elif command == "remove":
     if os.path.exists('bin'+h.get()+pfn):
         os.remove('bin'+h.get()+pfn)
         print("Removed " + package)
-elif command == "sideload":
-    sourcepath = ".."+h.get()+package+".src"
-    if verify(sourcepath):
-        f = open(sourcepath)
-        source = f.read()
-        f.close()
-        os.remove(sourcepath)
-        f = open(package+".py")
-        f.write(source)
-        f.close()
-        print("Done!")
-    else:
-        print("No file.")
