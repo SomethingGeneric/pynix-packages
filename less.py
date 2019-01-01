@@ -1,5 +1,8 @@
 import sys,os
 
+from oslib import hostmgr
+h = hostmgr()
+
 def clear():
     print("\n"*200)
 
@@ -10,7 +13,7 @@ else:
     print("Usage: less <filename>")
     quit()
 
-goal = 'home/'+path
+goal = 'home'+h.get()+path
 
 
 f = open(goal)

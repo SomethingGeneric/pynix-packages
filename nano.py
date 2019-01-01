@@ -1,5 +1,8 @@
 import os,sys
 
+from oslib import hostmgr
+h = hostmgr()
+
 
 if len(sys.argv) == 2:
     path = str(sys.argv[1])
@@ -7,7 +10,7 @@ else:
     print("Usage: nano <filename>")
     quit()
 
-goal = 'home/'+path
+goal = 'home'+h.get()+path
 
 
 print("Editing file. Enter a blank line to exit and save.")
