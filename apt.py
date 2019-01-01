@@ -22,19 +22,22 @@ pfn = package + ".py"
 if command == "install":
     r = requests.get(base + pfn)
     req = requests.get(base + package + ".txt")
-    if os.path.exists(package+'.txt'):
-        os.remove(package+'.txt')
-    if not "404: Not Found" in req.text:
-        f = open(package + ".txt",'w')
-        os.system('python3 -m pip install -r ' + package + ".txt")
-        os.remove(package+".txt")
-    if not os.path.exists(pfn):
-        f = open('bin'+h.get()+pfn,'w')
-        f.write(r.text)
-        f.close()
-        print("Installed " + package)
+    if not "<!DOCTYPE " in req.text:
+        if os.path.exists(package+'.txt'):
+            os.remove(package+'.txt')
+        if not "404: Not Found" in req.text:
+            f = open(package + ".txt",'w')
+            os.system('python3 -m pip install -r ' + package + ".txt")
+            os.remove(package+".txt")
+        if not os.path.exists(pfn):
+            f = open('bin'+h.get()+pfn,'w')
+            f.write(r.text)
+            f.close()
+            print("Installed " + package)
+        else:
+            print("Package installed. If you're trying to update, use 'apt remove' first")
     else:
-        print("Package installed. If you're trying to update, use 'apt remove' first")
+        print("Package not found.")
 elif command == "remove":
     if os.path.exists('bin'+h.get()+pfn):
         os.remove('bin'+h.get()+pfn)
