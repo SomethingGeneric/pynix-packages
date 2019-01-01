@@ -50,3 +50,5 @@ elif command == "sideload":
         f.write(source)
         f.close()
         print("Done!")
+    else:
+        print("No file.")
