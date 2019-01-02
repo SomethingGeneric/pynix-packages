@@ -1,4 +1,6 @@
-import os,shutil,sys,requests
+import os,shutil,sys,requests,colorama
+
+colorama.init(autoreset=True)
 
 from oslib import hostmgr
 h = hostmgr()
@@ -26,12 +28,14 @@ if command == "install":
             f = open("bin"+h.get()+pfn,"w+")
             f.write(r.text)
             f.close()
-            print("Installed " + package)
+            print(colorama.Fore.GREEN + "Installed " + package)
         else:
-            print("Already installed. Use 'apt remove' first.")
+            print(colorama.Fore.YELLOW + "Already installed. Use 'apt remove' first.")
     else:
-        print("Package not found.")
+        print(colorama.Fore.RED + "Package not found.")
 elif command == "remove":
     if os.path.exists('bin'+h.get()+pfn):
         os.remove('bin'+h.get()+pfn)
-        print("Removed " + package)
+        print(colorama.Fore.GREEN + "Removed " + package)
+    else:
+        print(colorama.Fore.RED + package + " not installed.")
