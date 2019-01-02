@@ -21,7 +21,7 @@ pfn = package + ".py"
 
 if command == "install":
     r = requests.get(base + pfn)
-    f = open(pfn,"w+")
+    f = open("bin"+h.get()+pfn,"w+")
     f.write(r.text)
     f.close()
 elif command == "remove":
