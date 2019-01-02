@@ -21,9 +21,15 @@ pfn = package + ".py"
 
 if command == "install":
     r = requests.get(base + pfn)
-    f = open("bin"+h.get()+pfn,"w+")
-    f.write(r.text)
-    f.close()
+    if not "<!DOCTYPE html>" in r.text:
+        if not verify("bin"+h.get()+pfn:
+            f = open("bin"+h.get()+pfn,"w+")
+            f.write(r.text)
+            f.close()
+        else:
+            print("Already installed. Use 'apt remove' first.")
+    else:
+        print("Package not found.")
 elif command == "remove":
     if os.path.exists('bin'+h.get()+pfn):
         os.remove('bin'+h.get()+pfn)
