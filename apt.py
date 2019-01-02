@@ -22,7 +22,7 @@ pfn = package + ".py"
 if command == "install":
     r = requests.get(base + pfn)
     if not "<!DOCTYPE html>" in r.text:
-        if not verify("bin"+h.get()+pfn:
+        if not verify("bin"+h.get()+pfn):
             f = open("bin"+h.get()+pfn,"w+")
             f.write(r.text)
             f.close()
