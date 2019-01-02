@@ -26,6 +26,7 @@ if command == "install":
             f = open("bin"+h.get()+pfn,"w+")
             f.write(r.text)
             f.close()
+            print("Installed " + package)
         else:
             print("Already installed. Use 'apt remove' first.")
     else:
