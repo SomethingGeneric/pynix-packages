@@ -26,7 +26,7 @@ if command == "install":
             os.remove(package+'.txt')
         if not "404: Not Found" in r.text:
             f = open(package + ".txt",'w')
-            os.system('python3 -m pip install -r ' + package + ".txt")
+            os.system(sys.executable + ' -m pip install -r ' + package + ".txt")
             os.remove(package+".txt")
         if not os.path.exists(pfn):
             f = open('bin'+h.get()+pfn,'w')
