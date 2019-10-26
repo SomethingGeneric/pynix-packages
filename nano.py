@@ -1,6 +1,7 @@
-import os,sys
+import os, sys
 
 from oslib import hostmgr
+
 h = hostmgr()
 
 
@@ -10,7 +11,7 @@ else:
     print("Usage: nano <filename>")
     quit()
 
-goal = 'home'+h.get()+path
+goal = "home" + h.get() + path
 
 
 print("Editing file. Enter a blank line to exit and save.")
@@ -24,6 +25,6 @@ while True:
     else:
         break
 
-f = open(goal,'w')
+f = open(goal, "w")
 f.write(total)
 f.close()
